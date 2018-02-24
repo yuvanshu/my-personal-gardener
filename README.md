@@ -1,8 +1,8 @@
-# apiweathertest
+# Test professional gardener
 
-yuvanshu learning python for the about the science project on personal gardener
+This is a copy of apiweathertest.
 
-app1 contains original python code for my-personal-gardener
+make changes to this file to test new conditions
 
 deploy to heroku 
 
