@@ -101,7 +101,7 @@ def makeWebhookResult(data, parameters):
         decision = ' need '
         if temp > 70 and moist > 25 :
              decision = ' does not need '
-        elif temp < 70 and moist < 20 :
+        elif temp < 70 and moist < 25 :
               decision = ' needs '
         result = {}
         if plant in ['cotton', 'tulips', 'wheat']:
