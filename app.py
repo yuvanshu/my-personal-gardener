@@ -37,7 +37,6 @@ def webhook():
     print(res)
 
     # Extract current fcast
-
     curr_fcast = res['query']['results']['channel']['item']['forecast']
     curr_fcast_text = curr_fcast['text']
     
@@ -102,7 +101,8 @@ def makeWebhookResult(data, parameters):
         moist = parameters.get('number')
         city = parameters.get('geo-city')
         temp = float(condition.get('temp'))
-        fcast = parameters.get('Forcast')
+        #fcast = parameters.get('Forcast')
+        fcast = condition.get('current_fcast_text')
         decision = ' need '
         if temp > 70 and moist > 25 :
              decision = ' does not need '
@@ -114,7 +114,7 @@ def makeWebhookResult(data, parameters):
              decision = ' needs ' 
         result = {}
         if plant in ['cotton', 'tulips', 'wheat']:
-            result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, curr_fcast_text, city,  moist,  plant, decision )
+            result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, fcast, city,  moist,  plant, decision )
             result['displayText'] = result['speech']
             result['source'] = 'apiai-weather-webhook-sample'
         return result
