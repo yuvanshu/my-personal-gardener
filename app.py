@@ -37,8 +37,8 @@ def webhook():
     print(res)
 
     # Extract current fcast
-    curr_fcast = res['query']['results']['channel']['item']['forecast']
-    curr_fcast_text = curr_fcast['text']
+    # curr_fcast = res['query']['results']['channel']['item']['forecast']
+    # curr_fcast_text = curr_fcast['text']
     
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
@@ -102,7 +102,7 @@ def makeWebhookResult(data, parameters):
         city = parameters.get('geo-city')
         temp = float(condition.get('temp'))
         #fcast = parameters.get('Forcast')
-        fcast = condition.get('current_fcast_text')
+        fcast = condition.get('text')
         decision = ' need '
         if temp > 70 and moist > 25 :
              decision = ' does not need '
