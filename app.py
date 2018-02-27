@@ -36,6 +36,11 @@ def webhook():
     res = json.dumps(res, indent=4)
     print(res)
 
+    # Extract current fcast
+
+    curr_fcast = res['query']['results']['channel']['item']['forecast']
+    curr_fcast_text = curr_fcast['text']
+    
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
@@ -109,7 +114,7 @@ def makeWebhookResult(data, parameters):
              decision = ' needs ' 
         result = {}
         if plant in ['cotton', 'tulips', 'wheat']:
-            result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, fcast, city,  moist,  plant, decision )
+            result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, curr_fcast_text, city,  moist,  plant, decision )
             result['displayText'] = result['speech']
             result['source'] = 'apiai-weather-webhook-sample'
         return result
