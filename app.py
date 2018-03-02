@@ -117,8 +117,7 @@ def makeWebhookResult(data, parameters):
         elif moist >= 25 and moist <= 30 and fcast in "sunny" :
              decision = ' needs '
         elif moist >= 25 and moist <= 30 and temp < 70 and fcast in "cloudy" :
-             decision = ' does not need '
-                
+             decision = ' does not need '      
     elif plant in "beans" :
         if fcast in "rainy" :
             decision = ' does not need '
@@ -133,7 +132,7 @@ def makeWebhookResult(data, parameters):
         elif moist >= 15 and moist <= 25 and temp < 70 and fcast in "cloudy" :
              decision = ' does not need '
         result = {}
-        if plant in ['cotton', 'beans']:
+        if plant in ["cotton", "beans"]:
             result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, fcast, city,  moist,  plant, decision )
             result['displayText'] = result['speech']
             result['source'] = 'apiai-weather-webhook-sample'
