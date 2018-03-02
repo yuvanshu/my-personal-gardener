@@ -119,7 +119,7 @@ def makeWebhookResult(data, parameters):
         elif moist >= 25 and moist <= 30 and temp < 70 and fcast in "cloudy" :
              decision = ' does not need '
                 
-    if plant in "beans" :
+    elif plant in "beans" :
         if fcast in "rainy" :
             decision = ' does not need '
         elif moist > 25 :
