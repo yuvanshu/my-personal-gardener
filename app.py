@@ -130,23 +130,23 @@ for row in c.fetchall():
 # Closing the connection to the database file
 conn.close()
 
-    if plant = plant_name: 
-        if fcast in ["Rain", "Rainy"] :
-            decision = ' does not need '
-        elif moist > moisture_high :
-            decision = ' does not need '
-        elif moist < moisture_low :
-            decision = ' needs '
-        elif moist >= moisture_low and moist <= moisture_high and temp >= temp_threshold and fcast in ["Sunny", "Cloudy", "Partly Cloudy", "Mostly Cloudy", "Partly Sunny", "Mostly Sunny"] :
-            decision = ' needs '
-        elif moist >= moisture_low and moist <= moisture_high and fcast in ["Sunny", "Mostly Sunny", "Partly Sunny"] :
-             decision = ' needs '
-        elif moist >= moisture_low and moist <= moisture_high and temp < temp_threshold and fcast in ["Cloudy", "Partly Cloudy", "Mostly Cloudy"] :
-             decision = ' does not need '      
-        result = {}
-        result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, fcast, city,  moist,  plant, decision )
-        result['displayText'] = result['speech']
-        result['source'] = 'apiai-weather-webhook-sample'
+if plant = plant_name: 
+   if fcast in ["Rain", "Rainy"] :
+      decision = ' does not need '
+    elif moist > moisture_high :
+      decision = ' does not need '
+    elif moist < moisture_low :
+      decision = ' needs '
+    elif moist >= moisture_low and moist <= moisture_high and temp >= temp_threshold and fcast in ["Sunny", "Cloudy", "Partly Cloudy", "Mostly Cloudy", "Partly Sunny", "Mostly Sunny"] :
+      decision = ' needs '
+    elif moist >= moisture_low and moist <= moisture_high and fcast in ["Sunny", "Mostly Sunny", "Partly Sunny"] :
+      decision = ' needs '
+    elif moist >= moisture_low and moist <= moisture_high and temp < temp_threshold and fcast in ["Cloudy", "Partly Cloudy", "Mostly Cloudy"] :
+      decision = ' does not need '      
+    result = {}
+    result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, fcast, city,  moist,  plant, decision )
+    result['displayText'] = result['speech']
+    result['source'] = 'apiai-weather-webhook-sample'
     return result
 
 if __name__ == '__main__':
