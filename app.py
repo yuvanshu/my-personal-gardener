@@ -106,15 +106,17 @@ def makeWebhookResult(data, parameters):
         #fcast = parameters.get('Forcast')
         fcast = condition.get('text')
         decision = ' need '
-		
-sqlite_file = 'plant_db'    # name of the sqlite database file
-table_name = 'plantdatabase'   # name of the table to be queried
-id_column = 'row_id'
-some_id = 1
-column_1 = 'plant_name'
-column_2 = 'moisture_low'
-column_3 = 'moisture_high' 
-column_4 = 'temp_threshold'   
+	
+    data= item.get('data')
+    if data is not None:
+        sqlite_file = 'plant_db'    # name of the sqlite database file
+        table_name = 'plantdatabase'   # name of the table to be queried
+        id_column = 'row_id'
+        some_id = 1
+        column_1 = 'plant_name'
+        column_2 = 'moisture_low'
+        column_3 = 'moisture_high' 
+        column_4 = 'temp_threshold'   
 
 # Connecting to the database file
 conn = sqlite3.connect(sqlite_file)
