@@ -133,11 +133,14 @@ if plant.upper() = plant_name.upper():
              decision = ' needs '
         elif moist >= moisture_low and moist <= moisture_high and temp < temp_threshold and fcast in ["Cloudy", "Partly Cloudy", "Mostly Cloudy"] :
              decision = ' does not need '      
-        result = {}
-        result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, fcast, city,  moist,  plant, decision )
-        result['displayText'] = result['speech']
-        result['source'] = 'apiai-weather-webhook-sample'
+        
+result = {}
+if plant in plant_type:
+            result['speech'] = "Yuvanshu. The temperature is {0} degrees Fahrenheit and the weather forecast is {1} in  {2} and the soil moisture is {3} percent. Based on your data, your  {4}  {5} water  ".format( temp, fcast, city,  moist,  plant, decision )
+            result['displayText'] = result['speech']
+            result['source'] = 'apiai-weather-webhook-sample'
 return result
+	
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
