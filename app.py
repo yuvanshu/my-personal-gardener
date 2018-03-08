@@ -19,7 +19,7 @@ from flask import request
 from flask import make_response
 from flask import render_template
 
-w, h = 8,4;
+w, h = 4,8;
 Matrix = [[0 for x in range(w)] for y in range(h)] 
 
 Matrix[0] = "cotton",25,30,70
