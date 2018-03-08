@@ -118,7 +118,7 @@ def makeWebhookResult(data, parameters):
         fcast = condition.get('text')
         decision = ' need '
 
-    for i in  range(0,w):
+    for i in  range(0,h):
         if ( Matrix[i][0].upper() == plant.upper() ) :
             plant_name     = Matrix[i][0]
             moisture_low   = Matrix[i][1]
