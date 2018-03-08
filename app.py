@@ -19,17 +19,17 @@ from flask import request
 from flask import make_response
 from flask import render_template
 
-w, h = 4,4;
+w, h = 4,8;
 Matrix = [[0 for x in range(w)] for y in range(h)] 
 
 Matrix[0] = "cotton",25,30,70
 Matrix[1] = "maize",20,25,60
 Matrix[2] = "soybeans",20,30,60
 Matrix[3] = "wheat",15,25,80
-#Matrix[4] = "Maize",35,40,70
-#Matrix[5] = "Alfafa",40,45,70
-#Matrix[6] = "Sunflowers",35,40,70
-#Matrix[7] = "Peas",20,25,60
+Matrix[4] = "Maize",35,40,70
+Matrix[5] = "Alfafa",40,45,70
+Matrix[6] = "Sunflowers",35,40,70
+Matrix[7] = "Peas",20,25,60
 
 # Flask app should start in global layout
 
